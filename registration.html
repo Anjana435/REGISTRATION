@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--opening head tag-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="regsty.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="fun.js">
+    </script>
+    <title>Reg form</title>
+</head>
+<!--closing head tag-->
+<!--opening body tag with event pageload-->
+<body>
+    <!--opening div tag with classs is container-->
+    <div class="container">
+        <!--heading-->
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <!--opening form tag with onsubmit event-->
+        <form name="register" action="regaction.php" method="POST" enctype="multipart/form-data">
+            <!--opening div tag -->
+            <div class="main-agileinfo">
+                <div class="agileits-top">
+                    <!--label tag and input type of first and last name-->
+                    <label for="fname">FIRST NAME:</label>
+                        <input type="text"id="fname"name="fname"placeholder="fname" onchange="return change_va()">
+                    <label for="lname">LAST NAME:</label>
+                        <input type="text"id="lname"name="lname"placeholder="lname">
+                    <!--break tag-->
+                    <br>
+                    <!--date of birth using date type-->
+                    <label for="dob">DATE OF BIRTH</label>
+                        <input type="date" id="dob" name="dob">
+                    <!--mobile no-->
+                    <label for="mob">MOBILE NUMBER</label>
+                        <input type="tel" id="phone" name="phone" placeholder="xxxxxxxxxx" size="10">
+                    <br>
+                    <!--email-->
+                    <label for="email">ENTER YOUR MAIL:</label>
+                        <input type="text" id="email" name="email" placeholder="abc@gmail.com">
+                    <!--address-->
+                    <label for="address">ADDRESS:</label>
+                        <textarea id="address" name="address"placeholder="address" rows="6" cols="30"></textarea>
+                    <br>
+                    <!--radio button for selecting gender-->    
+                    <label for="Gender">GENDER:</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            <br>
+                            <!--checkbox for interest-->
+                            <label>INTEREST:</label>
+                                <input type="checkbox" id="interest1"name="interest1"value="PYTHON">
+                                <label for="PYTHON">PYTHON</label>
+                                <input type="checkbox" id="interest2"name="interest2"value="PHP">
+                                <label for="PHP">PHP</label>
+                                <input type="checkbox" id="interest3"name="interest3"value="JAVA">
+                                <label for="JAVA">JAVA</label>
+                                <br>
+                                <!--enter city-->
+                            <label for="city">CITY:</label>
+                                <select name="city" id="city">
+                                    <option value="sel">select</option>
+                                    <option value="EKM">Ernakulam</option>
+                                    <option value="KKD">Kozhikode</option>
+                                    <option value="TVM">Thiruvanathapuram</option>
+                                    <option value="TRSR">Thrissur</option>
+                                </select>
+                            <!--enter college name-->
+                            <label for="clgname">COLLEGE NAME:</label>
+                                <input type="text"id="clgname"name="clgname"placeholder="enter your college name">
+                            <!--selecting graduation year-->
+                            <label for="yr">GRADUATION YEAR:</label> 
+                                <select id="yr" name="yr" size="1">
+                                    <option value="year">select</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                                <br>
+                            <!--select image-->
+                            <label for="img">SELECT IMAGE:</label>
+                                <input type="file" id="img" name="img" accept="image/*" >
+                            <!--upload resume-->
+                            <label for="resume">UPLOAD RESUME:</label>
+                                <input type="file" id="resume" name="resume" accept="pdf">
+                                <br>
+                            <!--text-->
+                            <label for="txt">Why do you want to intern for us?:</label>
+                                <textarea id="txt" name="txt" rows="10" cols="60"></textarea>
+                                <br>
+                            <!--username-->
+                            <label for="username">USER NAME:</label>
+                                <input type="text" placeholder="Enter Username" name="uname">
+                            <!--password-->
+                            <label for="pwd">PASSWORD:</label>
+                                <input type="password" id="pwd" name="pwd" >
+                            <br>
+                            <!--reenter password-->
+                            <label for="pwd">RE ENTER PASSWORD:</label>
+                                <input type="password" id="repwd" name="repwd">
+                            <br>
+                        <!--opening div class-->
+                        <div class="container bg-light">
+                            <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                        <!--closing div tag-->
+                </div>
+                <!--closing div tag -->
+            </div>
+            <!--closing div tag -->
+        </form>
+        <!--closing form tag-->
+    </div>
+</body>
+<!--closing body tag -->
+</html>
